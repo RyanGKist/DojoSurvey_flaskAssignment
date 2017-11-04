@@ -5,12 +5,22 @@
 			<title>Dojo Survey</title>
 		</head>
 		<body>
+			<h1> Dojo Survey </h1>
+			
+			 {% with messages = get_flashed_messages() %}
+    				{% if messages %}
+      				{% for message in messages %}
+       				{{message}}
+      				{% endfor %}
+    				{% endif %}
+  					{% endwith %}
+
 			<form action="/process" method="post">
-				Name:<input type="text" name="name">
-				Email:<input type="text" name="email">
-				Phone Number:<input type="text" name ="number">
-				Location:<input type="text" name="location">
-				<input type="submit" value"adding input">
+				Name:<input type="text" name="name"><br>
+				Email:<input type="text" name="email"> <br>
+				Phone Number:<input type="text" name ="number"><br>
+				<input type="radio" name="location" value="San Jose">San Jose <input type="radio" name="location" value="Seattle">Seattle<br>
+				<input type="submit" value"adding input"><br>
 			</form>
 		</body>
 	</html>
